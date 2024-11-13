@@ -1,6 +1,6 @@
 ﻿namespace Labb_4___Generic_collections
 {
-    internal class MenuItem
+    public class MenuItem
     {
         // I denna klass använder vi auto-implemented properties
         public int Id { get; set; }

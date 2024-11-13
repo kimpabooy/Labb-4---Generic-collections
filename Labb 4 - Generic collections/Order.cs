@@ -1,6 +1,6 @@
 ﻿namespace Labb_4___Generic_collections
 {
-    internal class Order
+    public class Order
     {
         // I denna klass använder vi i stället private fields
         static int orderIdCounter = 1;
@@ -16,5 +16,7 @@
             _orderItems = orderItems;
             _tableNumber = tableNumber;
         }
+
+        // Insert method here!
     }
 }

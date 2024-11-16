@@ -30,8 +30,8 @@ namespace Labb_4___Generic_collections
         {
             return _orderId;
         }
-                
-        public decimal TotalPrice()
+        
+        public decimal TotalPriceOfItems()
         {
             decimal sum = 0;
             foreach (var item in _orderItems)

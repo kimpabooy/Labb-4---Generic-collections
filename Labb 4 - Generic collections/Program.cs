@@ -15,12 +15,25 @@
             resturant.ShowMenu();
             LineBreak();
 
-            Order order1 = new Order(new List<MenuItem> { new MenuItem(1, "Pankakor", 49), new MenuItem(2, "Hamburgare", 99) }, 5);
+            // Adding orders
+            Order order1 = new Order(new List<MenuItem> {
+                new MenuItem(1, "Pankakor", 49),
+                new MenuItem(2, "Hamburgare", 99) 
+            }, 5);
             resturant.CreateOrder(order1);
-            Order order2 = new Order(new List<MenuItem> { new MenuItem(3, "Fläskfilé", 149), new MenuItem(4, "crème brûlée", 65) }, 10);
+            
+            Order order2 = new Order(new List<MenuItem> {
+                new MenuItem(3, "Fläskfilé", 149),
+                new MenuItem(4, "crème brûlée", 65) 
+            }, 10);
             resturant.CreateOrder(order2);
-            Order order3 = new Order(new List<MenuItem> { new MenuItem(1, "Pankakor", 49), new MenuItem(3, "Fläskfilé", 149) }, 15);
-            resturant.CreateOrder(order3);LineBreak();
+            
+            Order order3 = new Order(new List<MenuItem> {
+                new MenuItem(1, "Pankakor", 49),
+                new MenuItem(3, "Fläskfilé", 149) 
+            }, 15);
+            resturant.CreateOrder(order3);
+            LineBreak();
 
             resturant.ShowOrders();
             LineBreak();
@@ -39,7 +52,10 @@
             LineBreak();
 
             // Adding a new order to the list.
-            var order4 = new Order(new List<MenuItem> { new MenuItem(4, "crème brûlée", 65), new MenuItem(2, "Hamburgare", 99) }, 20);
+            var order4 = new Order(new List<MenuItem> {
+                new MenuItem(4, "crème brûlée", 65),
+                new MenuItem(2, "Hamburgare", 99) 
+            }, 20);
             resturant.CreateOrder(order4);
             LineBreak();
 
@@ -64,12 +80,8 @@
             resturant.ShowOrderCount();
 
 
-
-
-
             Console.ReadKey();
         }
-
 
         static void LineBreak()
         {

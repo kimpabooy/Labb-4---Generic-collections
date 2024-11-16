@@ -8,7 +8,7 @@
         public void AddtoMenu(MenuItem menuItem)
         {
             menu.Add(menuItem);
-            Console.WriteLine($" {menuItem.Name} har lagts till i menyn");
+            Console.WriteLine($" {menuItem.Name} har lagts till i menyn.");
         }
         public void ShowMenu()
         {
@@ -21,7 +21,7 @@
         public void CreateOrder(Order order)
         {
             orderQueue.Enqueue(order);
-            Console.WriteLine($" Beställning nr {order.OrderNumber()} har lagts till");
+            Console.WriteLine($" Beställning nr {order.OrderNumber()} har lagts till.");
         }
         public void HandleOrder()
         {
@@ -34,7 +34,7 @@
             foreach (var item in orderQueue)
             {
                 Console.WriteLine(item);
-                Console.WriteLine($" Summa: {item.TotalPrice():C} \n");
+                Console.WriteLine($" Summa: {item.TotalPriceOfItems():C} \n");
             }
         }
         public void ShowNextOrder()
@@ -43,8 +43,15 @@
         }
         public void ShowOrderCount()
         {
-            Console.WriteLine($"\n Antal ordrar i kön: {orderQueue.Count}\n");
+            if (orderQueue.Count > 0)
+            {
+               Console.WriteLine($" Antal ordrar i kön: {orderQueue.Count}");
+            }
+            else
+            {
+                Console.WriteLine(" Det finns inga väntande ordrar i kön just nu.");
+            }
+            
         }
-        
     }
 }

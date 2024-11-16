@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Diagnostics;
+using System.Numerics;
 
 namespace Labb_4___Generic_collections
 {
@@ -21,12 +22,23 @@ namespace Labb_4___Generic_collections
 
         public override string ToString()
         {
-            string orders = string.Join(", ", _orderItems);
-            return $" Order #{_orderId} {orders} to table: {_tableNumber}";
+            string orders = string.Join("\n", _orderItems);
+            return $" Order #{_orderId}\n{orders}\n Bordsnummer: {_tableNumber}";
         }
+        
         public int OrderNumber()
         {
             return _orderId;
+        }
+                
+        public decimal TotalPrice()
+        {
+            decimal sum = 0;
+            foreach (var item in _orderItems)
+            {
+                sum += item.Price;
+            }
+            return sum;
         }
     }
 }

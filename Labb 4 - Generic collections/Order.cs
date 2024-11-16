@@ -1,4 +1,6 @@
-﻿namespace Labb_4___Generic_collections
+﻿using System.Numerics;
+
+namespace Labb_4___Generic_collections
 {
     public class Order
     {
@@ -17,6 +19,14 @@
             _tableNumber = tableNumber;
         }
 
-        // Insert method here!
+        public override string ToString()
+        {
+            string orders = string.Join(", ", _orderItems);
+            return $" Order #{_orderId} {orders} to table: {_tableNumber}";
+        }
+        public int OrderNumber()
+        {
+            return _orderId;
+        }
     }
 }

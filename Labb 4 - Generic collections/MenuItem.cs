@@ -16,7 +16,7 @@
 
         public override string ToString()
         {
-            return $"{Name} - {Price:C}";
+            return $" {Name} - {Price:C}";
         }
     }
 }

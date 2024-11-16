@@ -2,39 +2,48 @@
 {
     public class Resturant
     {
-        List<string> menuItems = new List<string>(); // lista av menyartiklar.
-        Queue<string> orders = new Queue<string>(); // Lista av beställda ordrar.
+        private List<MenuItem> menu = new List<MenuItem>();
+        private Queue<Order> orderQueue = new Queue<Order>();
 
-        public void AddtoMenu(MenuItem menuItem) // Lägger till en ny maträtt i menyn och loggar detta till konsolen.
+        public void AddtoMenu(MenuItem menuItem)
         {
-            //menuItems.Add(menuItem);
+            menu.Add(menuItem);
+            Console.WriteLine($"{menuItem.Name} was added to the menu");
         }
-        public void ShowMenu() // Skriver ut alla maträtter i menyn till konsolen.
+        public void ShowMenu()
         {
-            foreach (var item in menuItems)
+            Console.WriteLine("     MENU");
+            foreach (var item in menu)
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"{item}");
             }
         }
-        public void CreateOrder(Order order) // Lägger till en ny beställning i kön och loggar detta till konsolen.
+        public void CreateOrder(Order order)
         {
-
+            orderQueue.Enqueue(order);
+            Console.WriteLine($" Order number #{order.OrderNumber()} was successfully added");
         }
-        public void HandleOrder() // Hanterar (tar bort) den första beställningen i kön och loggar detta till konsolen.
+        public void HandleOrder()
         {
-
+            var order = orderQueue.Dequeue();
+            Console.WriteLine($"{order} was served!");
         }
-        public string ShowOrders() // Skriver ut alla beställningar i kön till konsolen.
+        public void ShowOrders()
         {
-            return "";
+            Console.WriteLine(" Current orders:"); // Ändra denna
+            foreach (var item in orderQueue)
+            {
+                Console.WriteLine( item);
+            }
         }
-        public void ShowNextOrder() // Skriver ut beställningen som är näst i kön till konsolen.
+        public void ShowNextOrder()
         {
-            Console.WriteLine(orders.Peek);
+            Console.WriteLine($" Next item in queue: {orderQueue.Peek()}");
         }
-        public void ShowOrderCount() // Skriver ut antalet beställningar i kön till konsolen.
+        public void ShowOrderCount()
         {
-            Console.WriteLine(orders.Count);
+            Console.WriteLine($"\n Orders in queue: {orderQueue.Count}\n");
         }
+        
     }
 }
